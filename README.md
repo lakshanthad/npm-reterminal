@@ -24,9 +24,7 @@ npm install https://github.com/lakshanthad/npm-reterminal
 const InputEvent = require('npm-reterminal');
 const dev = require('npm-reterminal/lib/deviceid');
 
-const input = new InputEvent(dev.accelPath());
-   
-const accel = new InputEvent.Accel(input);
+const accel = new InputEvent.Accel(dev.accelPath());
 
 accel.on('A1', function(buffer){
     console.log('x-axis value=' + buffer)
@@ -54,12 +52,10 @@ while (true) {
 ### Touch Panel Test
 
 ```javascript
-const InputEvent = require('..');
+const InputEvent = require('npm-reterminal');
 const dev = require('npm-reterminal/lib/deviceid');
 
-const input = new InputEvent(dev.tpPath());
-
-const touch = new InputEvent.Touch(input);
+const touch = new InputEvent.Touch(dev.tpPath());
 
 touch.on('x-axis', function(buffer){
     console.log('x-axis coordinate=' + buffer)
@@ -76,9 +72,7 @@ touch.on('y-axis', function(buffer){
 const InputEvent = require('npm-reterminal');
 const dev = require('npm-reterminal/lib/deviceid');
 
-const input = new InputEvent(dev.buttonsPath());
-
-const button = new InputEvent.Button(input);
+const button = new InputEvent.Button(dev.buttonsPath());
 
 button.on('F1ON' , function(){
     console.log('F1 Pressed');

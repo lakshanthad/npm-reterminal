@@ -1,9 +1,7 @@
 const InputEvent = require('..');
 const dev = require('../lib/deviceid');
-
-const input = new InputEvent(dev.accelPath());
    
-const accel = new InputEvent.Accel(input);
+const accel = new InputEvent.Accel(dev.accelPath());
 
 accel.on('A1', function(buffer){
     console.log('x-axis value=' + buffer)

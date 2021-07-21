@@ -1,9 +1,7 @@
 const InputEvent = require('../');
 const dev = require('../lib/deviceid');
 
-const input = new InputEvent(dev.buttonsPath());
-
-const button = new InputEvent.Button(input);
+const button = new InputEvent.Button(dev.buttonsPath());
 
 button.on('F1ON' , function(){
     console.log('F1 Pressed');

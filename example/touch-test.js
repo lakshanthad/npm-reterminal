@@ -1,9 +1,7 @@
 const InputEvent = require('..');
 const dev = require('../lib/deviceid');
 
-const input = new InputEvent(dev.tpPath());
-
-const touch = new InputEvent.Touch(input);
+const touch = new InputEvent.Touch(dev.tpPath());
 
 touch.on('x-axis', function(buffer){
     console.log('x-axis coordinate=' + buffer)
